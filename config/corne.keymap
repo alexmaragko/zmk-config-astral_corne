@@ -52,9 +52,9 @@
 // | ESC |     |     |     |     |   | PGD | HOME| END |     |     |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &none &none &none &none &none  &none       &none    &kp UP   &none     &none
-   &none &none &none &none &none  &kp PG_UP   &kp LEFT &kp DOWN &kp RIGHT &none
-   &none &none &none &none &none  &kp PG_DOWN &kp HOME &kp END  &none     &none
+   &none &none &none &none &none  &none     &none    &kp UP   &none     &none
+   &none &none &none &none &none  &kp PG_UP &kp LEFT &kp DOWN &kp RIGHT &none
+   &none &none &none &none &none  &kp PG_DN &kp HOME &kp END  &none     &none
                              &kp LGUI &trans   &kp SPACE   &mo FNBT RET   &mo MEDIA    &none
                         >;
                 };
