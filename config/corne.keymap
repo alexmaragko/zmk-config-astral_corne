@@ -28,7 +28,7 @@
    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P
    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI
    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-                  &lt LGUI ESC &lt LSHFT SPACE &lt LCTRL BKSP   &lt NUMCHAR TAB &lt RALT RET &tog NAVI
+                  &mt LGUI ESC &mt LSHFT SPACE &mt LCTRL BKSP   &mt NUMCHAR TAB &mt RALT RET &tog NAVI
                         >;
                 };
                 namchar_layer {
@@ -55,7 +55,7 @@
    &none &none &none &none &none  &none     &none    &kp UP   &none     &none
    &none &none &none &none &none  &kp PG_UP &kp LEFT &kp DOWN &kp RIGHT &none
    &none &none &none &none &none  &kp PG_DN &kp HOME &kp END  &none     &none
-                             &kp LGUI &trans   &kp SPACE   &mo FNBT RET   &mo MEDIA    &none
+                             &kp LGUI &trans   &kp SPACE   &mo FNBT &mo MEDIA    &none
                         >;
                 };
                 
@@ -81,7 +81,7 @@
 //                    |     |     |     |   |     |     |     |
                         bindings = <
    &none  &none  &none  &none  &none    &none   &none &none &none &none
-   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F11 &none &none &none &none
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F11 &none &none &none &none
    &kp F6 &kp F7 &kp F8 &kp F9 &kp F10  &kp F12 &none &none &none &none
                              &kp LGUI &none   &none   &none   &none    &none
                         >;
