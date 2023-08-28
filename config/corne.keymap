@@ -29,7 +29,7 @@
 	time-to-max-speed-ms = <400>;
 };
 
-#define U_MOUSE_SCROLL_MAX 100
+#define U_MOUSE_SCROLL_MAX 50
 
 #undef SCROLL_UP
 #undef SCROLL_DOWN
@@ -42,6 +42,21 @@
 
 &mwh {
   time-to-max-speed-ms = <500>;
+};
+
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
+/ {
+    behaviors {
+        mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_tog";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
+    };
 };
 
 / {
@@ -61,7 +76,7 @@
    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P
    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI
    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-                        &mt LGUI ESC &mt LSHFT SPACE &mt LCTRL BKSP   &lt NUMCHAR TAB &mt RALT RET &lt NAVI DEL
+                        &mt LGUI ESC &mt LSHFT SPACE &mt LCTRL BKSP   &lt NUMCHAR TAB &mt RALT RET MO_TOG(NAVI)
                         >;
                 };
                 namchar_layer {
@@ -108,14 +123,14 @@
 
                 fnbt_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     | BUP | BDN |     |   |     |     |     |     |     |
+// | BT0 | BT1 |     |     |     |   |     |     |     |     |BTCLR|
 // | F1  | F2  |  F3 |  F4 |  F5 |   | F11 |     |     |     |     |
 // | F6  | F7  |  F8 |  F9 |  F10|   | F12 |     |     |     |     |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &none  &none  &none  &none  &none    &none   &none &none &none &none
-   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F11 &none &none &none &none
-   &kp F6 &kp F7 &kp F8 &kp F9 &kp F10  &kp F12 &none &none &none &none
+   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL_2  &bt BT_SEL_3  &none    &none   &none &none &none &bt BT_CLR
+   &kp F1        &kp F2        &kp F3        &kp F4        &kp F5   &kp F11 &none &none &none &none
+   &kp F6        &kp F7        &kp F8        &kp F9        &kp F10  &kp F12 &none &none &none &none
                              &kp LGUI &none   &none   &none   &none    &none
                         >;
                 };
